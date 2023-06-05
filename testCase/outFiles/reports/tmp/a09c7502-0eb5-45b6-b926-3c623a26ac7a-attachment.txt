@@ -1,0 +1,1 @@
+[32mINFO    [0m utils.handle_log:basePage.py:137 ['css selector', '.el-row > div:nth-child(1) .total-value']:元素不存在
