@@ -46,4 +46,4 @@ class Driver(Single):
 
 
 if __name__ == '__main__':
-    Driver().get_driver()
+    # Driver().get_driver()
