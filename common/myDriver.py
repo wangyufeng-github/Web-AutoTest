@@ -33,7 +33,7 @@ class Driver(Single):
         # 若驱动对象不存在
         if self._driver is None:
             if browser_name == "chrome":
-                self._driver = webdriver.Chrome(ChromeDriverManager.install())
+                self._driver = webdriver.Chrome(ChromeDriverManager().install())
             elif browser_name == "firefox":
                 self._driver = webdriver.Firefox()
             else:
