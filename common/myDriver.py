@@ -6,7 +6,7 @@
 # @File : myDriver.py
 # @Software : PyCharm
 from selenium import webdriver
-
+from webdriver_manager.chrome import ChromeDriverManager
 from configs.config import implicitly_wait,chrome_driver_path
 
 
@@ -33,7 +33,7 @@ class Driver(Single):
         # 若驱动对象不存在
         if self._driver is None:
             if browser_name == "chrome":
-                self._driver = webdriver.Chrome(executable_path=chrome_driver_path)
+                self._driver = webdriver.Chrome(ChromeDriverManager.install())
             elif browser_name == "firefox":
                 self._driver = webdriver.Firefox()
             else:
