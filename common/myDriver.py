@@ -7,7 +7,7 @@
 # @Software : PyCharm
 from selenium import webdriver
 
-from configs.config import implicitly_wait
+from configs.config import implicitly_wait,chrome_driver_path
 
 
 # 单例模式，哪个类需要使用则直接继承即可
@@ -33,7 +33,7 @@ class Driver(Single):
         # 若驱动对象不存在
         if self._driver is None:
             if browser_name == "chrome":
-                self._driver = webdriver.Chrome()
+                self._driver = webdriver.Chrome(executable_path=chrome_driver_path)
             elif browser_name == "firefox":
                 self._driver = webdriver.Firefox()
             else:
