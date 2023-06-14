@@ -33,11 +33,12 @@ class Driver(Single):
         # 若驱动对象不存在
         if self._driver is None:
             if browser_name == "chrome":
-                self._driver = webdriver.Chrome(ChromeDriverManager().install())
+                # self._driver = webdriver.Chrome(ChromeDriverManager().install())
+                self._driver = webdriver.Chrome(executable_path=chrome_driver_path)
             elif browser_name == "firefox":
                 self._driver = webdriver.Firefox()
             else:
-                raise (f'没有当前{browser_name}类型的浏览器')
+                raise f'没有当前{browser_name}类型的浏览器'
             # 根据配置文件设置的时间进行隐式等待
             self._driver.implicitly_wait(implicitly_wait)
             # 最大化窗口
